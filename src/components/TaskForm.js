@@ -1,5 +1,6 @@
 // src/components/TaskForm.js
 
+// This is the task form component. It is responsible for displaying the form for adding a new task.
 import React, { useState } from 'react';
 
 const TaskForm = ({ addTask }) => {
