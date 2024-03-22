@@ -1,4 +1,5 @@
 // src/components/Task.js
+// This is the task component. It is responsible for displaying a single task.
 
 import React from 'react';
 
