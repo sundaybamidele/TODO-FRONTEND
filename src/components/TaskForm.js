@@ -24,13 +24,17 @@ const TaskForm = ({ addTask }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <hr  color='red' size='2' />
       <textarea
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
+      <hr  color='red' size='2' />
       <button type="submit">Add Task</button>
+      <hr  color='red' size='2' />
     </form>
+    
   );
 };
 

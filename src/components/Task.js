@@ -7,7 +7,9 @@ const Task = ({ task, deleteTask }) => {
   return (
     <li>
       <strong>{task.title}</strong>
+      <br />
       <p>{task.description}</p>
+      <br/>
       <button onClick={() => deleteTask(task.id)}>Delete</button>
     </li>
   );
