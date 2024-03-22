@@ -17,7 +17,8 @@ function App() {
 
   return (
     <div centre>
-      <h1>Your are welcome to my TODO Web Application</h1>
+      <center><h1>Your are welcome to my TODO Web Application</h1>
+      <br/><h3>Work in progress</h3></center>
       <TaskForm addTask={addTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} />
     </div>
