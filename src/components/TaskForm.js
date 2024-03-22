@@ -18,19 +18,23 @@ const TaskForm = ({ addTask }) => {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add Task</h2>
+      <hr  color='red' size='2' />
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <hr  color='red' size='2' />
+      <br />
+      <br />
+     
       <textarea
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
-      <hr  color='red' size='2' />
+      <br />
+      <br />
       <button type="submit">Add Task</button>
       <hr  color='red' size='2' />
     </form>
