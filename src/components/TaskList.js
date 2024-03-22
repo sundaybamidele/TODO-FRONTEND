@@ -1,5 +1,5 @@
 // src/components/TaskList.js
-
+//this is the task list componrent. It is responsible for displaying the list of taskts.
 import React from 'react';
 import Task from './Task';
 
