@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
-import EditTaskForm from './components/EditTaskForm'; // Import the EditTaskForm component
+import EditTaskForm from './components/EditTaskForm';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Clock from 'react-clock';
@@ -11,8 +11,8 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [date, setDate] = useState(new Date());
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [isEditing, setIsEditing] = useState(false); // State variable to manage edit mode
-  const [editingTask, setEditingTask] = useState(null); // State variable to store task being edited
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
 
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -24,7 +24,7 @@ function App() {
 
   const updateTask = (updatedTask) => {
     setTasks(tasks.map(task => task.id === updatedTask.id ? updatedTask : task));
-    cancelEdit(); // Exit edit mode after updating task
+    cancelEdit();
   };
 
   const handleDateChange = (date) => {

@@ -1,10 +1,7 @@
-// api.js
-
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://your-backend-api-url.com/api', // Replace with your actual backend API URL
-  timeout: 5000, // Adjust as needed
+  baseURL: 'http://localhost:8080/api', // Adjust the base URL according to your backend API
   headers: {
     'Content-Type': 'application/json',
   },
