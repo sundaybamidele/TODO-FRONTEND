@@ -13,11 +13,7 @@
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="#">Contact Us</a>
         </li>
       </ul>
       {/* <form class="d-flex" role="search">
