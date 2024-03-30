@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function App() {
   return (
     <div>
-     <link to="/"> Home</link> 
+     <Link to="/"> Home</link> 
      <Link to="/about"> About Us</Link>  
      <Link to="/contact"> Contact Us</Link>  
      <Home /> 
