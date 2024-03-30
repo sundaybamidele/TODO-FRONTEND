@@ -4,14 +4,14 @@ import Contact from '../Pages/Contact-us.js';
 import {Routes, Route } from'react-router-dom'; 
 
 
-function MyRouter(){
-
-    return (        
-        <Routes>
-                <Route path="/" component={<Home />} />
-                <Route path="/about-us" component={About} />
-                <Route path="/contact-us" component={Contact} />
-        </Routes> 
-    )               
+function MyRouter() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about-us" element={<About />} />
+      <Route path="/contact-us" element={<Contact />} />
+    </Routes>
+  );
 }
+
 export default MyRouter;
