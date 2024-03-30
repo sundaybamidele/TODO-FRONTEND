@@ -1,18 +1,17 @@
-
-import {Routers, Route } from'react-router-dom'; 
 import Home from '../Pages/Home.js';
-import About from '../Pages/About.js';
-import Contact from '../Pages/Contact.js';
+import About from '../Pages/About-us.js';
+import Contact from '../Pages/Contact-us.js';
+import {Routes, Route } from'react-router-dom'; 
 
 
 function MyRouter(){
 
     return (        
-        <Routers>
+        <Routes>
                 <Route path="/" component={<Home />} />
                 <Route path="/about-us" component={About} />
                 <Route path="/contact-us" component={Contact} />
-        </Routers> 
+        </Routes> 
     )               
 }
 export default MyRouter;
