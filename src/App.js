@@ -1,18 +1,14 @@
-import React from'react';
+import React from "react";
+import MyRouter from "./router/index.js";
+import Navbar from "./components/Navbar.js";
 
-import { Link } from 'react-router-dom';
-import MyRouter from './router/index.js';
 
 function App() {
   return (
     <div>
-     <Link to="/"> Home</Link> 
-     <Link to="/about-us"> About Us</Link>  
-     <Link to="/contact-us"> Contact Us</Link>  
-    
+      <Navbar />
 
-     <MyRouter />
-      
+      <MyRouter />
     </div>
   );
 }
