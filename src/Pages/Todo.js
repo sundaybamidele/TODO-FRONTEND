@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Loading from "../components/Loading";
+import Load from "../components/Loading";
 
 
 function Todo() {
-  const [Loading, setLoading] = useState(true);
+  const [Load, setLoad] = useState(true);
   const [todos, setTodo] = useState([]);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/todo").then((res) => {
       console.log(res);
       setTodo(res.data.todos);
-      setLoading(false);
+      setLoad(false);
     });
   }, []);
 
-  if (Loading) {
-    return <Loading />;
+  if (Load) {
+    
+    return <Load />
   }
   var todoDetails = "";
   todoDetails = todos.map((item, index) => {

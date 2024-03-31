@@ -1,11 +1,14 @@
-function Loading() {
-  return (
-    <div className="container mt-5">
+
+
+function Load() {
+
+  return(
+    <div className="container mt-3">
        <div className="spinner-grow text-primary" role="status">
          <span className="visually-hidden">Loading...</span>
        </div><span> Loading.....Please Wait.</span>
     </div>
-  );
+  )
 }
 
-export default Loading;
+export default Load;
