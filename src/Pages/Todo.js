@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../components/Loading";
+
 
 function Todo() {
   const [Loading, setLoading] = useState(true);
   const [todos, setTodo] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/todo").then(res => {
-    console.log(res)
-    setTodo(res.data.todos);
-    setLoading(false);
+    axios.get("http://127.0.0.1:8000/api/todo").then((res) => {
+      console.log(res);
+      setTodo(res.data.todos);
+      setLoading(false);
     });
   }, []);
 
-  if(Loading){
-    return <div>Loading...</div>;
-
+  if (Loading) {
+    return <Loading />;
   }
   var todoDetails = "";
   todoDetails = todos.map((item, index) => {
@@ -46,7 +47,9 @@ function Todo() {
             <div className="card-header">
               <h4>
                 Todo List
-                <Link to="/" className="btn btn-primary float-end">Add New Task</Link>
+                <Link to="/" className="btn btn-primary float-end">
+                  Add New Task
+                </Link>
               </h4>
             </div>
             <div className="card-body">
