@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-//import Load from "../components/Load";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import axios from "axios"
+//import Load from "../components/Load"
 
 function Todo() {
   const [Load, setLoad] = useState(true);
@@ -52,7 +52,7 @@ function Todo() {
             <div className="card-header">
               <h4>
                 Todo List
-                <Link to="/" className="btn btn-primary float-end">
+                <Link to="/todo/Create" className="btn btn-primary float-end">
                   Add New Task
                 </Link>
               </h4>
