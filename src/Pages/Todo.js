@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -6,9 +6,9 @@ function Todo() {
   const [todo, setTodo] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/todo").then((response) => {
-      console.log(response);
-      setTodo(response.data.todo);
+    axios.get("http://127.0.0.1:8000/api/todo").then((res) => {
+      console.log(res);
+      setTodo(res.data.todo);
     });
   }, []);
   var todoDetails = "";
