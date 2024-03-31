@@ -10,9 +10,10 @@ function Todo() {
     axios.get("http://127.0.0.1:8000/api/todo").then(res => {
     console.log(res)
     setTodo(res.data.todos);
+    setLoading(false);
     });
   }, []);
-  
+
   if(Loading){
     return <div>Loading...</div>;
 
