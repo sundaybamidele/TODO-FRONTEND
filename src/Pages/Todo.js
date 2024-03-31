@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Load from "../components/Loading";
-
+//import Load from "../components/Load";
 
 function Todo() {
   const [Load, setLoad] = useState(true);
@@ -16,10 +15,15 @@ function Todo() {
     });
   }, []);
 
+  
   if (Load) {
-    
-    return <Load />
+    return(
+      <div>
+    Loading.....Please Wait.
+    </div>
+    )
   }
+  
   var todoDetails = "";
   todoDetails = todos.map((item, index) => {
     return (
