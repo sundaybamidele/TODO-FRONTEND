@@ -7,7 +7,7 @@ import Pageloading from "../components/Pageloading";
 function Todo() {
 
   
-  const [pageloading, setPageloading] = useState(true);
+  const [loading, setLoading] = useState(false);
   
   const [todos, setTodo] = useState([]);
 
@@ -15,18 +15,9 @@ function Todo() {
     axios.get("http://127.0.0.1:8000/api/todo").then((res) => {
       console.log(res);
       setTodo(res.data.todos);
-      setPageloading(false)
+      setLoading(false)
     });
   }, []);
-
-  
-  if (Pageloading) {
-    return(
-
-       <Pageloading/>
-
-    )
-  }
   
   var todoDetails = "";
   todoDetails = todos.map((item, index) => {
@@ -48,7 +39,7 @@ function Todo() {
     );
   });
 
-  if (Pageloading) {
+  if (loading) {
     return(
       <Pageloading/>
     )

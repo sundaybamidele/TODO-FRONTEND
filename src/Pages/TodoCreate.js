@@ -8,7 +8,7 @@ function TodoCreate() {
 
   const Navigate = useNavigate();
 
-  const [Pageloading, setPageloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [inputErrorList, setInputErrorList] = useState({});
   
@@ -25,7 +25,7 @@ function TodoCreate() {
 
   const saveTodo = (e) => {
     e.preventDefault();
-    setPageloading(true);
+    setLoading(true)
     
 
     const data = {
@@ -38,7 +38,7 @@ function TodoCreate() {
       .then(res => {
         alert(res.data.message);
         Navigate('/todo')
-        setPageloading(false);
+        setLoading(false)
       })
       .catch(function (error) {
 
@@ -46,17 +46,17 @@ function TodoCreate() {
 
           if (error.response.status === 422) {
               setInputErrorList(error.response.data.message)
-              setPageloading(false);
+              setLoading(false)
           }
           if (error.response.status === 500) {
             alert(error.response.data);
-            setPageloading(false);
+            setLoading(false)
           }
         }
       });
   };
 
-  if (Pageloading) {
+  if (loading) {
     return(
       <Pageloading/>
     )
