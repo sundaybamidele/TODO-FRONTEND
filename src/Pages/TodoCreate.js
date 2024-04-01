@@ -13,7 +13,7 @@ function TodoCreate() {
 
   const [inputErrorList, setInputErrorList] = useState({});
   
-  const [todo, setTodo] = useState({
+  const [mytodo, setMytodo] = useState({
     title: "",
     description: "",
     status: ""
@@ -21,7 +21,7 @@ function TodoCreate() {
 
   const handleInput = (e) => {
     e.persist();
-    setTodo({ ...todo, [e.target.name]: e.target.value });
+    setMytodo({ ...mytodo, [e.target.name]: e.target.value });
   };
 
   const saveTodo = (e) => {
@@ -29,9 +29,9 @@ function TodoCreate() {
     setLoad= (true);
 
     const data = {
-      title: todo.title,
-      description: todo.description,
-      status: todo.status,
+      title: mytodo.title,
+      description: mytodo.description,
+      status: mytodo.status,
     };
 
     axios.post("http://127.0.0.1:8000/api/todo",data)
