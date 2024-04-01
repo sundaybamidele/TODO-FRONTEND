@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Load from '../components/Load.js';
+//import Load from '../components/Load.js';
 
 
 
@@ -47,7 +47,7 @@ function TodoCreate() {
 
           if (error.response.status === 422) {
               setInputErrorList(error.response.data.message)
-              setLoad=(false);
+              setLoad(false);
           }
           if (error.response.status === 500) {
             alert(error.response.data);
