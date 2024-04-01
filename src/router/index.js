@@ -12,9 +12,10 @@ function MyRouter() {
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/todo" element={<TodoList />} />
-      <Route path="/todo/Create" element={TodoCreate} />
+      <Route path="/todo/Create" element={<TodoCreate />} />
     </Routes>
   );
 }
+
 
 export default MyRouter;
