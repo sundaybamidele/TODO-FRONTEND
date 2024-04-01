@@ -44,6 +44,13 @@ function Todo() {
     );
   });
 
+  if (Load) {
+    return(
+      <div>
+    Loading.....Please Wait.
+    </div>
+    )
+  }
   return (
     <div className="container mt-5">
       <div className="row">
