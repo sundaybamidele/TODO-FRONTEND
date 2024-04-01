@@ -28,7 +28,7 @@ function Todo() {
         <td>{item.description}</td>
         <td>{item.status}</td>
         <td>
-          <Link to={`/todo/${item.id}`} className="btn btn-success">
+          <Link to={`/todo/${item.id}/edit`} className="btn btn-success">
             Edit
           </Link>
         </td>
