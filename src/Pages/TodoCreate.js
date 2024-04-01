@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Load from '../components/Load.js';
 
 
@@ -8,7 +8,7 @@ import Load from '../components/Load.js';
 function TodoCreate() {
 
 
-  const Navigate = useNavigate();
+  //const Navigate = useNavigate();
   const [Load, setLoad] = useState(false);
 
   const [inputErrorList, setInputErrorList] = useState({});
@@ -26,29 +26,31 @@ function TodoCreate() {
 
   const saveTodo = (e) => {
     e.preventDefault();
-    setLoad= (true);
+    setLoad(true);
 
     const data = {
       title: mytodo.title,
       description: mytodo.description,
       status: mytodo.status,
-    };
+    }
 
     axios.post("http://127.0.0.1:8000/api/todo",data)
       .then(res => {
         alert(res.data.message);
-        Navigate('/todo')
-        setLoad =(false);
+        //Navigate('/todo')
+        setLoad(false);
       })
       .catch(function (error) {
+
         if (error.response) {
+
           if (error.response.status === 422) {
-              setInputErrorList(error.response.data.errors)
+              setInputErrorList(error.response.data.message)
               setLoad=(false);
           }
           if (error.response.status === 500) {
             alert(error.response.data);
-            setLoad=(false);
+            setLoad(false);
           }
         }
       });
@@ -84,7 +86,7 @@ function TodoCreate() {
                   <input
                     type="text"
                     name="title"
-                    value={todo.title}
+                    value={mytodo.title}
                     onChange={handleInput}
                     className="form-control"
                   />
@@ -94,7 +96,7 @@ function TodoCreate() {
                   <label>Description</label>
                   <input
                     type="text"
-                    value={todo.description}
+                    value={mytodo.description}
                     onChange={handleInput}
                     name="description"
                     className="form-control"
@@ -106,7 +108,7 @@ function TodoCreate() {
                   <input
                     type="text"
                     name="status"
-                    value={todo.status}
+                    value={mytodo.status}
                     onChange={handleInput}
                     className="form-control"
                   />
