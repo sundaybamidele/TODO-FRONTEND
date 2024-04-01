@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Load from '../components/Load.js';
 
 
@@ -8,7 +8,8 @@ import Load from '../components/Load.js';
 function TodoCreate() {
 
 
-  //const Navigate = useNavigate();
+  const Navigate = useNavigate();
+
   const [Load, setLoad] = useState(false);
 
   const [inputErrorList, setInputErrorList] = useState({});
@@ -37,7 +38,7 @@ function TodoCreate() {
     axios.post("http://127.0.0.1:8000/api/todo",data)
       .then(res => {
         alert(res.data.message);
-        //Navigate('/todo')
+        Navigate('/todo')
         setLoad(false);
       })
       .catch(function (error) {
