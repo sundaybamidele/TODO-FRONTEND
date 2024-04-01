@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Pageloading from "../components/Pageloading";
 
-
 function TodoCreate() {
 
 
   const Navigate = useNavigate();
 
-  const [Load, setLoad] = useState(false);
+  const [Pageloading, setPageloading] = useState(false);
 
   const [inputErrorList, setInputErrorList] = useState({});
   
@@ -26,7 +25,8 @@ function TodoCreate() {
 
   const saveTodo = (e) => {
     e.preventDefault();
-    setLoad(true);
+    setPageloading(true);
+    
 
     const data = {
       title: mytodo.title,
@@ -38,7 +38,7 @@ function TodoCreate() {
       .then(res => {
         alert(res.data.message);
         Navigate('/todo')
-        setLoad(false);
+        setPageloading(false);
       })
       .catch(function (error) {
 
@@ -46,21 +46,19 @@ function TodoCreate() {
 
           if (error.response.status === 422) {
               setInputErrorList(error.response.data.message)
-              setLoad(false);
+              setPageloading(false);
           }
           if (error.response.status === 500) {
             alert(error.response.data);
-            setLoad(false);
+            setPageloading(false);
           }
         }
       });
   };
 
-  if (Load) {
+  if (Pageloading) {
     return(
-      <div>
-    Loading.....Please Wait.
-    </div>
+      <Pageloading/>
     )
   }
   return (

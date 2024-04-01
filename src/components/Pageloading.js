@@ -1,15 +1,9 @@
 function Pageloading() {
   return (
     <div className="container mt-3">
-      <button class="btn btn-primary" type="button" disabled>
-        <span
-          class="spinner-border spinner-border-sm"
-          aria-hidden="true"
-        ></span>
-        <span class="visually-hidden" role="status">
-          Loading...Please wait.
-        </span>
-      </button>
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div><span>Loading... Please wait.</span>
     </div>
   );
 }

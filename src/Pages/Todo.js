@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
-//import Load from "../components/Load"
+import Pageloading from "../components/Pageloading";
+
 
 function Todo() {
-  const [Load, setLoad] = useState(true);
+
+  
+  const [pageloading, setPageloading] = useState(true);
+  
   const [todos, setTodo] = useState([]);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/todo").then((res) => {
       console.log(res);
       setTodo(res.data.todos);
-      setLoad(false);
+      setPageloading(false)
     });
   }, []);
 
   
-  if (Load) {
+  if (Pageloading) {
     return(
-      <div>
-    Loading.....Please Wait.
-    </div>
+
+       <Pageloading/>
+
     )
   }
   
@@ -44,11 +48,9 @@ function Todo() {
     );
   });
 
-  if (Load) {
+  if (Pageloading) {
     return(
-      <div>
-    Loading.....Please Wait.
-    </div>
+      <Pageloading/>
     )
   }
   return (
