@@ -17,7 +17,23 @@ function TodoEdit() {
     axios.get(`http://127.0.0.1:8000/api/todo/${id}/edit`).then((res) => {
       console.log(res);
       setMytodo(res.data.todo);
+
       setLoading(false);
+
+    })
+    .catch(function (error) {
+
+      if (error.response) {
+
+        if (error.response.status === 404) {
+          alert(error.response.data.message);
+          setLoading(false)
+      }
+        if (error.response.status === 500) {
+          alert(error.response.data);
+          setLoading(false)
+        }
+      }
     });
   }, [id]);
 
@@ -28,8 +44,9 @@ function TodoEdit() {
     setMytodo({ ...mytodo, [e.target.name]: e.target.value });
   };
 
-  const saveTodo = (e) => {
+  const updateTodo = (e) => {
     e.preventDefault();
+    
     setLoading(true)
     
 
@@ -39,7 +56,7 @@ function TodoEdit() {
       status: mytodo.status,
     }
 
-    axios.post("http://127.0.0.1:8000/api/todo",data)
+    axios.put(`http://127.0.0.1:8000/api/todo/${id}/edit`,data)
       .then(res => {
         alert(res.data.message);
         setLoading(false)
@@ -52,6 +69,10 @@ function TodoEdit() {
               setInputErrorList(error.response.data.message)
               setLoading(false)
           }
+          if (error.response.status === 404) {
+            alert(error.response.data.message);
+            setLoading(false)
+        }
           if (error.response.status === 500) {
             alert(error.response.data);
             setLoading(false)
@@ -82,7 +103,7 @@ function TodoEdit() {
             </div>
             <div className="card-body">
 
-              <form onSubmit={saveTodo}>
+              <form onSubmit={updateTodo}>
                 <div className="mb-3">
                   <label>Title</label>
                   <input
