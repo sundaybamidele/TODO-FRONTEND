@@ -7,7 +7,7 @@ import Pageloading from "../components/Pageloading";
 function Todo() {
 
   
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   
   const [todos, setTodo] = useState([]);
 

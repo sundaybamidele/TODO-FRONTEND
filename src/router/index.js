@@ -4,6 +4,7 @@ import Contact from '../Pages/Contact-us.js';
 import {Routes, Route } from'react-router-dom'; 
 import TodoList from '../Pages/Todo.js';
 import TodoCreate from '../Pages/TodoCreate.js';
+import TodoEdit from '../Pages/TodoEdit.js';
 
 function MyRouter() {
   return (
@@ -13,6 +14,7 @@ function MyRouter() {
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/todo" element={<TodoList />} />
       <Route path="/todo/Create" element={<TodoCreate />} />
+      <Route path="/todo/:id/edit" element={<TodoEdit />} />
     </Routes>
   );
 }
