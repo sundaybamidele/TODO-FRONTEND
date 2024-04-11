@@ -1,13 +1,14 @@
-import React from 'react'
-import Navbar from './Navbar'
 import { BrowserRouter } from 'react-router-dom';
+import React from 'react'
+import Todo from './Todo'
+import "bootstrap/dist/css/bootstrap.min.css";
 
-describe('<Navbar />', () => {
+describe('<Todo />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
     cy.mount(
       <BrowserRouter>
-     <Navbar />
+      <Todo />
     </BrowserRouter>
     )
   })
