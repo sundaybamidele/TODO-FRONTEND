@@ -52,6 +52,11 @@ function TodoCreate() {
             alert(error.response.data);
             setLoading(false)
           }
+          
+          if (error.response.status === 409) {
+            alert(error.response.data.message);
+            setLoading(false)
+          }
         }
       });
   };
@@ -102,7 +107,7 @@ function TodoCreate() {
                   <span className="text-danger">{inputErrorList && inputErrorList.description}</span>
                 </div>
                 <div className="mb-3">
-                  <label>Status</label>
+                  <label>Status(1 for ongoing and 0 for complete task)</label>
                   <input
                     type="text"
                     name="status"
