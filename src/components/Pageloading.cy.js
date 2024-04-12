@@ -1,15 +1,16 @@
 import React from 'react'
-import Navbar from './Navbar'
-import { BrowserRouter } from 'react-router-dom';
+import Pageloading from './Pageloading'
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from 'react-router-dom';
 
-describe('<Navbar />', () => {
+
+describe('<Pageloading />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
     cy.mount(
       <BrowserRouter>
-     <Navbar />
-    </BrowserRouter>
+      <Pageloading />
+     </BrowserRouter>
     )
   })
 })
