@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect} from "react";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams, useNavigate} from "react-router-dom";
 import Pageloading from "../components/Pageloading";
 
 function TodoEdit() {
+
+  const Navigate = useNavigate();
 
   let {id} = useParams();
 
@@ -35,9 +37,7 @@ function TodoEdit() {
         }
       }
     });
-  }, [id]);
-
-
+  }, [id, Navigate]);
 
   const handleInput = (e) => {
     e.persist();
@@ -56,9 +56,10 @@ function TodoEdit() {
       status: mytodo.status,
     }
 
-    axios.put(`http://127.0.0.1:8000/api/todo/${id}/edit`,data)
+    axios.put(`http://127.0.0.1:8000/api/todo/${id}/update`,data)
       .then(res => {
         alert(res.data.message);
+        Navigate('/todo')
         setLoading(false)
       })
       .catch(function (error) {
