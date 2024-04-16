@@ -1,19 +1,26 @@
-import { useState } from "react";
-import Calendar from "react-calendar";
-import Slider from "../components/Slider";
-
+import CarouselComponent from "../components/CarouselComponent"; // Assuming correct relative path to CarouselComponent component
+import Calendarclock from "../components/Calendarclock";
 
 function Home() {
-  const [value, onChange] = useState(new Date());
+  //const [value, onChange] = useState(new Date());
 
   return (
     <div className="container mt-5">
-      <h1>You are to my App Home Page</h1>
+      <center><h1>You are welcome to my App Home Page</h1></center><br/>
       <div className="container mt-5">
-        <Calendar onChange={onChange} value={value} />
+      { /*  <Calendar onChange={onChange} value={value} />*/}
       </div>
-      <div><Slider/></div>
+      {/* Including Slider component */}
+      <div className="container mt-5">
+  
+      </div>
+      {/* Including CarouselComponent component */}
+      <div className="container mt-5">
+        <CarouselComponent /><br/><br/><br/><br/><br/>
+        <Calendarclock />
+      </div>
     </div>
   );
 }
+
 export default Home;
