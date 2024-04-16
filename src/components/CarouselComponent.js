@@ -17,13 +17,13 @@ const CarouselComponent = () => {
   return (  
     <Slider {...settings}>
       <div>
-      <img src={process.env.PUBLIC_URL + '/images/slide1.jpeg'} alt="sl1" />
+        <img src={process.env.PUBLIC_URL + '/images/slide1.jpeg'} alt="sl1" />
       </div>
       <div>
-         <img src={process.env.PUBLIC_URL + '/images/slide2.jpeg'} alt="sl2" />
+        <img src={process.env.PUBLIC_URL + '/images/slide2.jpeg'} alt="sl2" />
       </div>
       <div> 
-         <img src={process.env.PUBLIC_URL + '/images/slide3.jpeg'} alt="sl3" />
+        <img src={process.env.PUBLIC_URL + '/images/slide3.jpeg'} alt="sl3" />
       </div>
       {/* Add more slides as needed */}
     </Slider>

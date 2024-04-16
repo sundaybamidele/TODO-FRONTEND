@@ -10,9 +10,6 @@ function Calendarclock() {
   const [date, setDate] = useState(new Date()); // State to manage the selected date
   const [currentTime, setCurrentTime] = useState(new Date()); // State to manage the current time
 
- 
-
- 
 
   const handleDateChange = (date) => {
     setDate(date); // Update the selected date when the user selects a new date
@@ -27,9 +24,8 @@ function Calendarclock() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h1>Calendar and Clock</h1>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}> 
+           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ marginRight: '20px', maxWidth: '400px' }}> {/* Adjust the width as needed */}
           <Calendar value={date} onChange={handleDateChange} /> {/* Displaying the calendar component */}
         </div>

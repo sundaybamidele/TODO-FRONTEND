@@ -16,8 +16,11 @@ function Home() {
       </div>
       {/* Including CarouselComponent component */}
       <div className="container mt-5">
+        
         <CarouselComponent /><br/><br/><br/><br/><br/>
+        <center><h3>Start Here</h3></center>
         <Calendarclock />
+        
       </div>
     </div>
   );
