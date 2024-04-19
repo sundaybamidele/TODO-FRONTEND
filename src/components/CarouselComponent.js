@@ -14,20 +14,23 @@ const CarouselComponent = () => {
     autoplaySpeed: 2000,
   };
 
-  return (  
+  return (
     <Slider {...settings}>
       <div>
-        <img src={process.env.PUBLIC_URL + '/slide1.jpeg'} alt="sl1" />
+        <img src={process.env.PUBLIC_URL + "/slide1.jpeg"} alt="sl1" />
       </div>
       <div>
-        <img src={process.env.PUBLIC_URL + '/slide2.jpeg'} alt="sl2" />
+        <img src={process.env.PUBLIC_URL + "/slide2.jpeg"} alt="sl2" />
       </div>
-      <div> 
-        <img src={process.env.PUBLIC_URL + '/slide3.jpeg'} alt="sl3" />
+      <div>
+        <img src={process.env.PUBLIC_URL + "/slide3.jpeg"} alt="sl3" />
+      </div>
+      <div>
+        <img src={process.env.PUBLIC_URL + "/slide3.jpeg"} alt="sl3" />
       </div>
       {/* Add more slides as needed */}
     </Slider>
   );
-}
+};
 
 export default CarouselComponent;
