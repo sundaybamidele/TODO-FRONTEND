@@ -18,12 +18,16 @@ function About() {
         <CarouselComponent />
         <br />
         <div className="container mt-5">
-          <h3>
+          <h3><center></center>
             This app was developed under the supersion of Dr. Alix Bergeret.
            <br/> Lecturer in Computer Science, School of Computing and Mathematical
             Sciences, University of Wolverhampton. Email: alix.bergeret@wlv.ac.uk
-            Office: MI115
-          </h3>
+            Office: MI115<br /><center/>
+            <br /></h3>
+            <h5>Course Title:       Web Technologies<br />
+            Course Code:            7CC005<br />
+            Year:                   2023-2024  
+            </h5>        
         </div>
         <Calendarclock />
       </div>
