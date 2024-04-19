@@ -1,5 +1,5 @@
 {
-  "name": "back",
+  "name": "Todo/Appp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "matchmedia-polyfill": "^0.3.2",
     "react": "^18.2.0",
     "react-bootstrap-carousel": "^4.1.1",
     "react-calendar": "^4.8.0",
@@ -44,6 +45,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
     "cypress": "^13.7.2"
   }
 }
