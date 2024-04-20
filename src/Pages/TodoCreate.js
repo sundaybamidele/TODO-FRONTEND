@@ -73,12 +73,10 @@ function TodoCreate() {
           <div className="card">
             <div className="card-header">
               <div>
-                <h4>
-                  Add New Task
+                <h4 data-testid3="Add New Task">Add New Task</h4>
                   <Link to="/todo" className="btn btn-danger float-end">
-                    Back
+                    <h4>Back</h4>
                   </Link>
-                </h4>
               </div>
             </div>
             <div className="card-body">

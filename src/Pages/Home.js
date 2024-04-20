@@ -6,7 +6,7 @@ function Home() {
 
   return (
     <div className="container mt-5">
-      <center><h1>You are welcome to my App Home Page</h1></center><br/>
+      <center><h1 data-testid="welcome">You are welcome to my App Home Page</h1></center><br/>
       <div className="container mt-5">
       { /*  <Calendar onChange={onChange} value={value} />*/}
       </div>

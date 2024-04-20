@@ -53,15 +53,13 @@ function Todo() {
         <div className="col-md-12">
           <div className="card">
             <div className="card-header">
-              <h4>
-                Todo List
+              <h4 data-testid="todo-header">Todo List</h4>
                 <Link to="/todo/Create" className="btn btn-primary float-end">
-                  Add New Task
+                  <h4 data-testid2="Add New Task">Add New Task</h4>
                 </Link>
-              </h4>
             </div>
             <div className="card-body">
-              <table className="table table-striped">
+              <table   className="table table-striped" >
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -72,7 +70,7 @@ function Todo() {
                     <th>Delete</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody >
                   {todos.map((todo, index) => (
                     <tr key={index}>
                       <td>{todo.id}</td>
