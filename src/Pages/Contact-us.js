@@ -13,10 +13,10 @@ function Contact(){
         <CarouselComponent /><br/><br/>
         <br />
         <div className="container mt-5">
-          <h3><center>
+          <center>
             <Pageloading/> 
-            Please check back, my detail is on the way.....<br/>
-            </center></h3>        
+           <h3  data-testid5="contact">My name is Bamidele Joseph Sunday with Student Number 2304954. Learning Web Application is fun and interesting.</h3><br/>
+            </center>       
         </div>
 
 

@@ -18,7 +18,7 @@ function About() {
         <CarouselComponent />
         <br />
         <div className="container mt-5">
-          <h3><center></center>
+          <h3 data-testid4="about">
             This app was developed under the supersion of Dr. Alix Bergeret.
            <br/> Lecturer in Computer Science, School of Computing and Mathematical
             Sciences, University of Wolverhampton. Email: alix.bergeret@wlv.ac.uk
