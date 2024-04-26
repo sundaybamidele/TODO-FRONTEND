@@ -39,5 +39,54 @@ describe('FrontEnd Integration Tests', () => {
     cy.get('[data-testid5="contact"]').should("have.text", "My name is Bamidele Joseph Sunday with Student Number 2304954. Learning Web Application is fun and interesting.");
   });
 
+  describe("Testing Tasks via API", () => {
+    it("Should check if Task 6 exists and has the correct title", () => {
+      cy.request("GET", "http://127.0.0.1:8000/api/todo").then((response) => {
+        const todos = response.body.todos;
+        const todoId6 = todos.find((todo) => todo.id === 6);
+  
+        expect(todoId6).to.exist;
+        expect(todoId6.title).to.equal("Web Technology Submission");
+      });
+    });
+  
+    it("Should check if the first record's title is 'Web Technology Submission'", () => {
+      cy.request("GET", "http://127.0.0.1:8000/api/todo").then((response) => {
+        const firstTodo = response.body.todos[0];
+        expect(firstTodo.title).to.equal("Web Technology Submission");
+      });
+    });
+  
+    it("Should check if the 21st record's title is 'My birthday'", () => {
+      cy.request("GET", "http://127.0.0.1:8000/api/todo").then((response) => {
+        const task20 = response.body.todos[20];
+        expect(task20.title).to.equal("My birthday");
+      });
+    });
+  
+    it("Should check if Task 14 exists and has the correct title", () => {
+      cy.request("GET", "http://127.0.0.1:8000/api/todo").then((response) => {
+        const todos = response.body.todos;
+        const todoId14 = todos.find((todo) => todo.id === 14);
+  
+        expect(todoId14).to.exist;
+        expect(todoId14.title).to.equal("Vacation");
+      });
+    });
+  
+    it("Should search for a task with a specific description", () => {
+      cy.request("GET", "http://127.0.0.1:8000/api/todo").then((response) => {
+        const todos = response.body.todos;
+        const specificDescription = "I want to install Bootstrap to my react";
+        const todoWithSpecificDescription = todos.find(
+          (todo) => todo.description === specificDescription
+        );
+  
+        expect(todoWithSpecificDescription).to.exist;
+      });
+    });
+  });
+  
+
 
 });

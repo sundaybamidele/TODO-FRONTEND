@@ -1,6 +1,6 @@
 import CarouselComponent from "../components/CarouselComponent"; // Assuming correct relative path to CarouselComponent component
 import Calendarclock from "../components/Calendarclock";
-import Pageloading from "../components/Pageloading";
+
 
 function Contact(){
    
@@ -10,22 +10,24 @@ function Contact(){
       
      
       <div className="container mt-5">
-        <CarouselComponent /><br/><br/>
-        <br />
+        <CarouselComponent /><br/>
+        
         <div className="container mt-5">
           <center>
-            <Pageloading/> 
-           <h3  data-testid5="contact">My name is Bamidele Joseph Sunday with Student Number 2304954. Learning Web Application is fun and interesting.</h3><br/>
+           
+           <h3  data-testid5="contact">My name is Bamidele Joseph Sunday with Student Number 2304954. <br/>
+           Learning Web Application is fun and interesting.</h3><br/>
             </center>       
         </div>
 
-
+        <div>
+        <center><img src={process.env.PUBLIC_URL + "/myimage.jpg"} alt="myimage" /></center>
+      </div>
 
         <Calendarclock />
       </div>
     </div>
     )       
-    
-
+  
 }
 export default Contact;

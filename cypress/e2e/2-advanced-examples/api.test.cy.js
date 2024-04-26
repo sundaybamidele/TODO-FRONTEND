@@ -1,5 +1,5 @@
 describe('API Integration Tests', () => {
-    it('should fetch todos from the API', () => {
+    it('should fetch Task from the API', () => {
       cy.request('GET', 'http://127.0.0.1:8000/api/todo')
         .then((response) => {
           // Verify that the response status is 200
@@ -31,6 +31,28 @@ describe('API Integration Tests', () => {
         expect(response.body.message).to.equal('Data saved successfully');
       });
     });
+
+    it('should fetch tasks via API', () => {
+      cy.request({
+        method: 'GET',
+        url: 'http://127.0.0.1:8000/api/todo', // Adjust the URL according to your API endpoint
+      }).then((response) => {
+        // Verify that the response status is 200 (OK)
+        expect(response.status).to.equal(200);
+      
+        // Verify that the response body contains an array of tasks
+       // expect(response.body).to.be.an('array');
+        
+        // Optionally, you can verify the structure of each task object
+        if (response.body.length > 0) {
+          const firstTask = response.body[0];
+          expect(firstTask).to.have.property('title');
+          expect(firstTask).to.have.property('description');
+          expect(firstTask).to.have.property('status');
+        }
+      });
+    });   
+    
   
     // Add more test cases for other API endpoints as needed
   });

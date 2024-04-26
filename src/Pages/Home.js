@@ -1,5 +1,6 @@
 import CarouselComponent from "../components/CarouselComponent"; // Assuming correct relative path to CarouselComponent component
 import Calendarclock from "../components/Calendarclock";
+import { Link } from "react-router-dom";
 
 function Home() {
   //const [value, onChange] = useState(new Date());
@@ -17,8 +18,9 @@ function Home() {
       {/* Including CarouselComponent component */}
       <div className="container mt-5">
         
-        <CarouselComponent /><br/><br/><br/><br/><br/>
-        <center><h3>Start Here</h3></center>
+        <CarouselComponent /><br/><br/>
+        <Link className="nav-link" to="/todo"><center><h3><button type="button" class="btn btn-primary">Click Here to Start</button></h3></center></Link>
+        <br/>
         <Calendarclock />
         
       </div>

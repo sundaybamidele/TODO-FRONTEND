@@ -28,6 +28,9 @@ const CarouselComponent = () => {
       <div>
         <img src={process.env.PUBLIC_URL + "/slide3.jpeg"} alt="sl3" />
       </div>
+      <div>
+        <img src={process.env.PUBLIC_URL + "/slide4.jpeg"} alt="sl4" />
+      </div>
       {/* Add more slides as needed */}
     </Slider>
   );
